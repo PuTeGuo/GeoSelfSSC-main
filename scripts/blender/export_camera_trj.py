@@ -18,7 +18,6 @@ z_flip = np.array(
 
 c_t_i = np.linalg.inv(c_t)
 
-
 def main():
     scn = bpy.context.scene
 
