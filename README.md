@@ -31,7 +31,7 @@ conda activate GeoSelfSSC
 
 All non-standard data (like precomputed poses and datasplits) comes with this repository and can be found in the `datasets/` folder.
 In addition, please adjust the `data_path` ,`data_depth_path`, `data_depth_std_path`, `data_normal_path` and `data_segmentation_path` in `configs/data/kitti_360.yaml`.\
-We explain how to obtain these datasets in [KITTI-360](#KITTI-360) ,[GeoCues](#Geometric Cues)
+We explain how to obtain these datasets in [KITTI-360](#KITTI-360) ,[GeoCues](#Geometric-Cues)
 and [Pseudo-Ground-Truth Segmentation masks](#pseudo-ground-truth-segmentation-masks).
 
 For the `data_path` the folder you link to should have the following structure:
@@ -170,9 +170,6 @@ python evaluate_model_sscbench.py \
 Coming soon.
 
 # 🗣️ Acknowledgements
-
-This work was supported by the ERC Advanced Grant SIMULACRON, the GNI project AI4Twinning and the Munich Center for Machine Learning.
-C. R. is supported by VisualAI EP/T028572/1 and ERC-UNION-CoG-101001212.
 
 This repository is based on the [S4C](https://github.com/ahayler/s4c) and [BehindTheScenes](https://fwmb.github.io/bts/). 
 We evaluate our models on the novel [SSCBench KITTI-360 benchmark](https://github.com/ai4ce/SSCBench). 
