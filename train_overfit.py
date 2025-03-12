@@ -1,6 +1,7 @@
 import ignite.distributed as idist
 import hydra
 from omegaconf import DictConfig, OmegaConf
+
 import os
 
 @hydra.main(version_base=None, config_path="configs")
