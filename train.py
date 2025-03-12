@@ -17,7 +17,6 @@ def main(config: DictConfig):
     OmegaConf.set_struct(config, False)
 
     os.environ["NCCL_DEBUG"] = "INFO"
-    # torch.autograd.set_detect_anomaly(True)
 
     backend = config.get("backend", None)
     nproc_per_node = config.get("nproc_per_node", None)
