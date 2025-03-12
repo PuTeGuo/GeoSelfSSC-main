@@ -1,18 +1,6 @@
 # Geo-SelfSSC: Integrating Dense Geometric Priors for Enhanced Self-Supervised Semantic Scene Completion
 
-This is the official implementation for the paper.
-
-# 📋 Abstract 
-
-Accurate 3D scene understanding is vital for applications like autonomous driving and robotics. However, existing voxel-based methods struggle with the reliance on large-scale labeled data, inherent voxel-pixel misalignments, and high computational costs. Recent the self-supervised Semantic Scene Completion (SSC) methods using Neural Radiance Fields (NeRF) reduce 3D annotation needs but assume Lambertian surfaces and rely on photometric consistency, which fails in real-world scenes with non-Lambertian effects and sparse camera coverage. In this paper, we introduce Geo-SelfSSC, a self-supervised framework that leverages temporal information from consecutive frames and slight variations in camera poses for supervision, while integrating dense geometric cues to enhance the reconstruction quality and efficiency of neural implicit models. Specifically, Geo-SelfSSC leverages depth priors along with complementary semi-local and local geometric supervision to facilitate efficient sampling, while ensuring effective complementarity between photometric and geometric cues. Our method yields significant improvements in reconstructing reflective, and under-observed regions where conventional photometric-based strategies struggle. Comprehensive experiments on challenging tasks demonstrate that Geo-SelfSSC not only achieves strong results in semantic scene completion but also establishes competitive performance in geometry-only 3D occupancy prediction and monocular depth estimation.
-
-# 👀 Overview
-
-![Overview Figure](assets/overview.png)
-
-**a)** Given multi-view input images, we first predict the depth and semantic maps through the existing model, and construct the depth information field. 
-**b)** Predict the feature map **F** for the input image **V<sub>1</sub>**, where each pixel feature **f<sub>u</sub>** encodes the information distribution along the corresponding ray. During sampling, the depth prior guides the process to improve efficiency. For each sampling point **x<sub>j</sub>**, the density, semantics, and normal are predicted. The color **c<sub>x<sub>j</sub>,k</sub>** required for the new view synthesis is obtained by mapping **x<sub>j</sub>** to different views **V<sub>(k)</sub>**. 
-**c)** The predictions of each pixel is obtained by volume Rendering. Finally, the model is optimized by the reconstruction losses.
+# 📋 This is the official implementation for the paper.
 
 # 🏗️️ Setup
 
