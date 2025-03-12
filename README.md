@@ -31,7 +31,7 @@ conda activate GeoSelfSSC
 
 All non-standard data (like precomputed poses and datasplits) comes with this repository and can be found in the `datasets/` folder.
 In addition, please adjust the `data_path` ,`data_depth_path`, `data_depth_std_path`, `data_normal_path` and `data_segmentation_path` in `configs/data/kitti_360.yaml`.\
-We explain how to obtain these datasets in [KITTI-360](#KITTI-360) ,[GeoCues](#Geometric-Cues)
+We explain how to obtain these datasets in [KITTI-360](#KITTI-360) ,[Geometric Cues](#Geometric-Cues)
 and [Pseudo-Ground-Truth Segmentation masks](#pseudo-ground-truth-segmentation-masks).
 
 For the `data_path` the folder you link to should have the following structure:
