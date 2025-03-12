@@ -11,6 +11,7 @@ from models.bts.evaluator_3dbb import evaluation as bts_3dbb
 from models.bts.evaluator_lidar import evaluation as bts_lidar
 
 
+
 @hydra.main(version_base=None, config_path="configs")
 def main(config: DictConfig):
 
