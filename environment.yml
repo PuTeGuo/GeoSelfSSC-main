@@ -19,7 +19,7 @@ dependencies:
       - dotdict
       - pytorch-msssim
       - plyfile
-      - tensorflow # for tensorboard (but it seems to be much faster with tensorflow)
+      - tensorflow  # for tensorboard (but it seems to be much faster with tensorflow)
       - opencv-python
       - matplotlib
       - moviepy
