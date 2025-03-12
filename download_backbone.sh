@@ -3,7 +3,7 @@
 echo "----------------------- Downloading pretrained BehindTheScenes backbone -----------------------"
 
 cp_link="https://cvg.cit.tum.de/webshare/g/behindthescenes/kitti-360/training-checkpoint.pt"
-cp_download_path="out/kitti_360/backbone/training-checkpoint.pt"
+cp_download_path="out/kitti_360/backbone/training-checkpoint.pt" 
 
 basedir=$(dirname $0)
 outdir=$(dirname $cp_download_path)
