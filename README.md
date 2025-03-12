@@ -28,6 +28,9 @@ For the `data_path` the folder you link to should have the following structure:
 calibration 
 data_2d_raw
 data_2d_semantics
+data_2d_depth
+data_2d_depth_std
+data_2d_normal
 data_3d_bboxes
 data_3d_raw
 data_poses
