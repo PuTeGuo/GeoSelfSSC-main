@@ -51,7 +51,7 @@ We require the perspective images, fisheye images, raw velodyne scans, calibrati
 
 ### Geometric Cues
 We use the existing SOTA depth estimators ([supervised](https://github.com/hisfog/SfMNeXt-Impl) and [self-supervised](https://github.com/nianticlabs/monodepth2)) to predict the depth cues. 
-After the depth map is obtained, the normal line result is further predicted.
+After the depth map is obtained, the normal result is further predicted.
 
 
 ### Pseudo-Ground-Truth Segmentation masks
