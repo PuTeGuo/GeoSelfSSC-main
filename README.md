@@ -166,6 +166,3 @@ This repository is based on the [S4C](https://github.com/ahayler/s4c) and [Behin
 We evaluate our models on the novel [SSCBench KITTI-360 benchmark](https://github.com/ai4ce/SSCBench). 
 We generate our pseudo 2D ground truth using the [Monodepth2](https://github.com/nianticlabs/monodepth2), [SQLdepth](https://github.com/hisfog/SfMNeXt-Impl) and [Panoptic Deeplab model zoo](https://github.com/bowenc0221/panoptic-deeplab/tree/master).
 
-# ❔ FAQ
-
-Here you can find the answers to commonly asked questions.
