@@ -34,7 +34,7 @@ def main():
     s_profile_depth = True
     dry_run = args.plot
 
-    cp_path = Path(f"/data/GPT/s4c-main/out/kitti_360/kitti_360_backend-None-1_20240915-210351")
+    cp_path = Path(f"/data")
 
     model = "KITTI-360"
 
