@@ -50,21 +50,9 @@ SAMPLE_RANGE = None
 
 import time
 
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230716-155013" # old best model
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230729-103126" # 2:1, camera offset 10:20
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230729-103639" # 1:1, camera offset 10:20
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230729-160312" # 1:1, camera offset 10:30
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230729-102115" # 2:1, camera offset 10
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230729-215907" # 1:1, camera offset 10:20, additional front offset, 2 frames
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230729-215947" # 1:1, camera offset 10:20, additional front offset, 4 frames
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230804-132413" # 1:1, camera offset 10:20, reweighted classes
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230805-185046" # 1:1 camera offset 10:40, weak reweight
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230805-002139" # 5:30 weak weights
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230804-235319" # 10:30 weak weights
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230805-185046" # 10:40 weak weights
-MODEL_PATH = "out/kitti_360/best_now" # 10:40 weak weights converged
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230806-164642" # 10:50 weak weights
-# MODEL_PATH = "out/kitti_360/kitti_360_backend-None-1_20230807-015030" # 10 weak weights
+
+MODEL_PATH = "out/kitti_360" 
+
 
 
 SIZE = 51.2 # Can be: 51.2, 25.6, 12.8
@@ -79,22 +67,12 @@ USE_MAXPOOLING = False
 
 GENERATE_PLY_FILES = True
 PLY_ONLY_FOV = True
-# PLY_IDS = [2235, 2495, 2385, 3385, 4360, 6035, 8575, 9010, 11260] # 10:40
-# PLY_IDS = [2495, 6035, 8575, 9010, 11260] # 10
-#PLY_IDS = [125, 5475, 6035, 6670, 6775, 7860, 8000]
-# PLY_IDS = list(range(1000, 1600))
 PLY_IDS = None
-# PLY_PATH = Path("/usr/stud/hayler/dev/BehindTheScenes/scripts/benchmarks/sscbench/ply10_fov")
-PLY_PATH = Path("/data/GPT/s4c-main/voxel_output/Geo-SelfSSC")
+PLY_PATH = Path("/data")
 PLY_SIZES = [12.8, 25.6, 51.2]
 
 if GENERATE_PLY_FILES:
     assert (not USE_MAXPOOLING) and VOXEL_SIZE == 0.1
-
-    # make the necessary dirs
-    # for size in PLY_SIZES:
-    #     if not os.path.exists(PLY_PATH / str(int(size))):
-    #         os.makedirs(PLY_PATH / str(int(size)))
 
 
 # Setup of CUDA device and logging
@@ -123,8 +101,8 @@ times = []
 
 def main():
     parser = argparse.ArgumentParser("SSCBenchmark Output generation")
-    parser.add_argument("--sscbench_data_root", "-ssc", type=str, default="/data/GPT/semantic scene completion/SSCBench-KITTI-360")
-    parser.add_argument("--voxel_gt_path", "-vgt", type=str, default="/data/GPT/semantic scene completion/SSCBench-KITTI-360/voxel_gt/labels")
+    parser.add_argument("--sscbench_data_root", "-ssc", type=str, default="/data/semantic scene completion/SSCBench-KITTI-360")
+    parser.add_argument("--voxel_gt_path", "-vgt", type=str, default="/data/semantic scene completion/SSCBench-KITTI-360/voxel_gt/labels")
     parser.add_argument("--resolution", "-r", default=(192, 640))
     parser.add_argument("--checkpoint", "-cp", type=str)
     parser.add_argument("--full", "-f", action="store_true")
@@ -174,7 +152,7 @@ def main():
 
     # model_path = "out/kitti_360/kitti_360_backend-None-1_20230715-222017"
     if cp_path is None:
-        cp_path = Path(f"/data/GPT/s4c-main/" + MODEL_PATH)
+        cp_path = Path(f"/data/" + MODEL_PATH)
     else:
         cp_path = Path(cp_path)
     cp_name = cp_path.name
@@ -345,9 +323,6 @@ def main():
             init_img = (data['init_imgs'][0] * 255).astype(np.uint8)
             cv2.imwrite(os.path.join(folder_path, f"{id:06d}_init_img.png"), cv2.cvtColor(init_img,cv2.COLOR_RGB2BGR))
 
-
-    # with open("/storage/slurm/hayler/bts/voxel_outputs/s4c/times_s4c.pkl", "wb") as f:
-    #     pickle.dump(times, f)
 
 def downsample_and_predict(data, net, pts, factor):
     pts = pts.reshape(256*factor, 256*factor, 32*factor, 3)
