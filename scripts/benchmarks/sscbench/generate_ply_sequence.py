@@ -51,7 +51,7 @@ SAMPLE_RANGE = None
 import time
 
 
-MODEL_PATH = "out/kitti_360_backend-None-1_20231220-233015" 
+MODEL_PATH = "out/" 
 
 
 
