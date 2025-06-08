@@ -31,10 +31,7 @@ from models.common.render import NeRFRenderer
 os.system("nvidia-smi")
 
 config_path = "exp_kitti_360"
-# cp_path = Path(f"../../out/kitti_360/pretrained")
-# cp_path = Path(f"out/kitti_360/k360_spatial_pix-mlp_d+c_mod_backend-None-1_20230319-173622")
-# cp_path = Path("../../out/kitti_360/kitti_360_backend-None-1_20230626-221220") # proper model nsegs=8 pamoptic deeplab
-cp_path = Path("/data/GPT/s4c-main/out/kitti_360/pretrained")
+cp_path = Path("/data")
 cp_path = next(cp_path.glob("training*.pt"))
 
 out_path = Path("../../media/voxel/presentation/kitti_360_val")
