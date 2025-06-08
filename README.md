@@ -4,7 +4,7 @@ This is the official implementation for the paper.
 
 # 🏗️️ Setup
 
-### 🐍 Python Environment
+### Python Environment
 
 We use **Conda** to manage our Python environment:
 ```shell
@@ -87,10 +87,6 @@ as a backbone from which we start our training. To download the backbone please 
 python train.py -cn exp_kitti_360
 ```
 
-### 📸 Checkpoints
-
-Coming soon.
-
 # 🏃 Running the Example
 
 We provide a script to run our pretrained models with custom data.
@@ -118,7 +114,7 @@ We provide **not only** a way to evaluate our method (Geo-SelfSSC) on the SSCBen
 but also a way to easily evaluate/compare other methods. For this, you only need the predictions on the test set 
 (sequence 09) saved as `frame_id.npy` files in a folder. \
 
-## 🐈 Geo-SelfSSC on SSCBench KITTI-360
+## Geo-SelfSSC on SSCBench KITTI-360
 
 To evaluate our model on the SSCBench KITTI-360 dataset, we need additional data:
 
@@ -154,11 +150,6 @@ python evaluate_model_sscbench.py \
 -f
 ```
 
-
-
-## ✂️ Ablation studies
-
-Coming soon.
 
 # 🗣️ Acknowledgements
 
