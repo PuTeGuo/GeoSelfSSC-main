@@ -62,7 +62,7 @@ classes_to_colors = torch.tensor(
     ]
 )
 
-with open("/data/GPT/s4c-main/scripts/benchmarks/sscbench/label_maps.yaml", "r") as f:
+with open("scripts/benchmarks/sscbench/label_maps.yaml", "r") as f:
     label_maps = yaml.safe_load(f)
 
 device = "cpu"
