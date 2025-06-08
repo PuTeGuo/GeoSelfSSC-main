@@ -8,10 +8,9 @@ import matplotlib.pyplot as plt
 sys.path.append(".")
 sys.path.extend([".", "../../../"])
 
-# from scripts.benchmarks.sscbench.generate_ply_sequence import get_cam_k
+
 from scripts.benchmarks.sscbench.point_utils import read_calib, generate_point_grid, get_fov_mask
 
-# from scripts.voxel.gen_voxelgrid_npy import save_as_voxel_ply
 
 import logging
 
@@ -43,7 +42,6 @@ DATASET_LENGTH = 10
 FULL_EVAL = True
 SAMPLE_EVERY = None
 SAMPLE_OFFSET = 2
-# SAMPLE_RANGE = list(range(1000, 1600))
 SAMPLE_RANGE = None
 
 SIZE = 51.2 # Can be: 51.2, 25.6, 12.8
@@ -261,10 +259,10 @@ def save_as_voxel_ply(path, is_occupied, size=(256, 256, 32), classes=None):
 
 def main():
     parser = argparse.ArgumentParser("SSCBenchmark Output generation")
-    parser.add_argument("--sscbench_data_root", "-ssc", type=str, default="/data/GPT/semantic scene completion/SSCBench-KITTI-360")
-    parser.add_argument("--voxel_gt_path", "-vgt", type=str, default="/data/GPT/semantic scene completion/SSCBench-KITTI-360/voxel_gt/labels")
+    parser.add_argument("--sscbench_data_root", "-ssc", type=str, default="/data/semantic scene completion/SSCBench-KITTI-360")
+    parser.add_argument("--voxel_gt_path", "-vgt", type=str, default="/data/semantic scene completion/SSCBench-KITTI-360/voxel_gt/labels")
     parser.add_argument("--resolution", "-r", default=(192, 640))
-    parser.add_argument("--checkpoint", "-cp", type=str, required=False, default="/data/GPT/s4c-main/out/kitti_360/60epochs_best/kitti_360_backend-None-1_20241111-112622")
+    parser.add_argument("--checkpoint", "-cp", type=str, required=False, default="out/kitti_360/kitti_360_backend-None-1_20241111-112622")
     parser.add_argument("--full", "-f", action="store_true")
 
     args = parser.parse_args()
