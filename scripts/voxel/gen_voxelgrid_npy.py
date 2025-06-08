@@ -26,10 +26,10 @@ from plyfile import PlyData, PlyElement
 
 os.system("nvidia-smi")
 
-in_path = Path("/data/GPT/实验结果/map_result/monoscene")
+in_path = Path("/data")
 TARGET_PATH = Path("/data/GPT/semantic scene completion/SSCBench-KITTI-360/voxel_gt/labels/2013_05_28_drive_0009_sync")
 # out_path = Path("media/voxel/npy/")
-out_path = Path("/data/GPT/实验结果/map_result/monoscene")
+out_path = Path("/data")
 # out_path = Path("/data/GPT/s4c-main/voxel_output/sscnet")
 out_path.mkdir(exist_ok=True, parents=True)
 
@@ -306,8 +306,5 @@ def main_segmentation():
     save_as_voxel_ply(out_path / f"{in_path.stem}.ply", is_occupied, classes=torch.tensor(segmentations))
 
 if __name__ == '__main__':
-    # safe_folder_segmentation("/storage/slurm/hayler/sscbench/3data/monoscene/paper", "monoscene")
-    safe_folder_segmentation("/data/GPT/实验结果/raw_result/monoscene", suffix="", sizes=[12.8, 25.6, 51.2], use_fov_mask=True)
-    # safe_folder_segmentation("/storage/slurm/hayler/sscbench/outputs/sscnet", suffix="", sizes=[12.8, 25.6, 51.2], use_fov_mask=True)
-    # safe_folder_segmentation("/storage/slurm/hayler/sscbench/outputs/sscnet", suffix="sscnet",
-    #                          ids=[125, 5475, 6670, 6775, 7860, 8000])
+    safe_folder_segmentation("/data", suffix="", sizes=[12.8, 25.6, 51.2], use_fov_mask=True)
+
