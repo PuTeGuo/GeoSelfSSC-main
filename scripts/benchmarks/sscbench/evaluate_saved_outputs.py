@@ -28,8 +28,6 @@ from hydra import compose, initialize
 
 import matplotlib.pyplot as plt
 
-# from datasets.kitti_360.kitti_360_dataset import Kitti360Dataset
-
 from models.bts.model import BTSNet, ImageRaySampler
 from models.common.render import NeRFRenderer
 
@@ -37,13 +35,6 @@ from fusion import TSDFVolume, rigid_transform
 
 from sscbench_dataset import SSCBenchDataset
 
-# for every output file, there needs to be a target file with the same id; fr
-#OUTPUTS_PATH = "/storage/slurm/hayler/sscbench/outputs/testset"
-#OUTPUTS_PATH = "/storage/slurm/hayler/sscbench/outputs/testset10"
-# OUTPUTS_PATH = "/storage/slurm/hayler/sscbench/outputs/lmscnet"
-# OUTPUTS_PATH = "/storage/slurm/hayler/sscbench/outputs/sscnet"
-#OUTPUTS_PATH = "/storage/slurm/hayler/sscbench/outputs/monoscene"
-# TARGET_PATH = "/storage/slurm/hayler/sscbench/dataset/kitti360/KITTI-360/preprocess_new/labels/2013_05_28_drive_0009_sync"
 
 SIZE = 51.2 # Can be: 51.2, 25.6, 12.8
 SIZES = (12.8, 25.6, 51.2)
